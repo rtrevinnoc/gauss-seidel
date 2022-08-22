@@ -9,7 +9,7 @@
     <button @click="eqNumber--">Eliminar ecuación</button>
     <button @click="solve()">Resolver sistema de ecuaciones</button>
     <ul v-if="solArray != []">
-        <li v-for="n in eqNumber" v-bind:key="n">X<sub>{{ n }}</sub> = {{ solArray[n - 1] }}</li>
+        <li v-for="n in eqNumber" v-bind:key="n">x<sub>{{ n }}</sub> = {{ solArray[n - 1] }}</li>
     </ul>
 </template>
 
