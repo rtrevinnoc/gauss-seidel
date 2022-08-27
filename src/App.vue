@@ -25,10 +25,10 @@
   <button @click="eqNumber++" class="btn btn-primary" style="margin: 5px">
     Agregar ecuación
   </button>
-  <button @click="eqNumber--" class="btn btn-primary" style="margin: 5px">
+  <button @click="eqNumber--" class="btn btn-danger" style="margin: 5px">
     Eliminar ecuación
   </button>
-  <button @click="solve()" class="btn btn-primary" style="margin: 5px">
+  <button @click="solve()" class="btn btn-success" style="margin: 5px">
     Resolver sistema de ecuaciones
   </button>
   <ul v-if="solArray != []">
