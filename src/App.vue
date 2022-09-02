@@ -7,7 +7,7 @@
           :id="[m, n]"
           :name="[m, n]"
           v-model="eqCoefficients[m + ',' + n]"
-          style="width: 20px"
+          style="width: 40px"
         />x<sub>{{ n }}</sub> <span v-if="n != eqNumber">+</span>
       </td>
       <td>
@@ -17,7 +17,7 @@
           :id="m"
           :name="m"
           v-model="eqResults[m]"
-          style="width: 20px"
+          style="width: 40px"
         />
       </td>
     </tr>
@@ -51,19 +51,25 @@ export default {
     };
   },
   methods: {
+    // seidel(coeficientes, soluciones, resultados)
     seidel(a, x, b) {
+      // dimension de la matriz
       const n = a.length;
 
+      // recorren las columnas
       for (let j = 0; j < n; j++) {
+        // una variable temporal para los resultados
         var d = b[j];
 
+        // recorres las filas
         for (let i = 0; i < n; i++) {
           if (j !== i) {
-            d -= a[j][i] * x[i];
+            // si es la variable actual, saltarlo
+            d -= a[j][i] * x[i]; // restar la multiplicacion del coeficiente por el valor actual de la variable
           }
         }
 
-        x[j] = d / a[j][j];
+        x[j] = d / a[j][j]; // actualizar la solucion dividida por el coeficiente de la variable actualizar
       }
 
       return x;
